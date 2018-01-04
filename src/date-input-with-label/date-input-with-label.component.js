@@ -32,10 +32,14 @@ class DateInputWithLabel extends React.Component{
                 "" :
             (this.props.invalidColor || "");
 
-        const { onChange, labelText, ...rest} = this.props;
-        console.log(this.state.isValid);
+        const { onChange, labelText, className, id, ...rest} = this.props;
+
+        const inputClassName = className ? (className + "-input") : "";
+        const inputId = id ? (id + "-input") : "";
+
         return (
             <label 
+            id={(this.props.id || "")}
             className={"date-input-label-wrapper " + (this.props.className || "")}>
 
                 <div 
@@ -56,6 +60,8 @@ class DateInputWithLabel extends React.Component{
                 
                 <DateInput
                 {...rest}
+                id={inputId}
+                className={inputClassName}
                 onChange={this.handleChange}
                 />
             </label>

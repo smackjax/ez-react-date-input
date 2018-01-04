@@ -1149,12 +1149,17 @@ var DateInputWithLabel = function (_React$Component) {
             var _props = this.props,
                 onChange = _props.onChange,
                 labelText = _props.labelText,
-                rest = _objectWithoutProperties(_props, ['onChange', 'labelText']);
+                className = _props.className,
+                id = _props.id,
+                rest = _objectWithoutProperties(_props, ['onChange', 'labelText', 'className', 'id']);
 
-            console.log(this.state.isValid);
+            var inputClassName = className ? className + "-input" : "";
+            var inputId = id ? id + "-input" : "";
+
             return _react2.default.createElement(
                 'label',
                 {
+                    id: this.props.id || "",
                     className: "date-input-label-wrapper " + (this.props.className || "") },
                 _react2.default.createElement(
                     'div',
@@ -1177,6 +1182,8 @@ var DateInputWithLabel = function (_React$Component) {
                     )
                 ),
                 _react2.default.createElement(_.DateInput, _extends({}, rest, {
+                    id: inputId,
+                    className: inputClassName,
                     onChange: this.handleChange
                 }))
             );

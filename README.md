@@ -36,15 +36,16 @@ validateFunc={customValidate}
 
 <DateInputWithLabel 
 {/*^Everything from DateInput */}
+className=""
+id=""
 labelText="from"
 />
 
 ```
 
 ### Important stuff
-**If 'value' is set** then onChange *must* update the source of 'value'. Otherwise, value will overwrite input changes
-Uses momentJS
-Default input and output formats are 'YYYY-MM-DD'
+* **If 'value' is set** then onChange *must* update the source of 'value'. Otherwise, value will overwrite input changes.
+* Default input and output formats are 'YYYY-MM-DD'.
 ``` javascript
 /* onChange will get this object */
 {
@@ -60,7 +61,7 @@ Default input and output formats are 'YYYY-MM-DD'
 
 ---
 ## References
-#### props
+### props
 ##### `<DateInput>`
 Children classNames are "date-input date", "date-input month", "date-input year", and "hidden-form-value"
 * **id** - Given to wrapper. (id) + ("-date", "-month", "-year) is given to the inputs for label handling.
@@ -86,19 +87,26 @@ All default to "YYYY-MM-DD"
 
 ##### `<DateInputWithLabel>`
 * ^All the props from DateInput
-* **className** - Given to container label, appended to "date-input-label-wrapper"
+* **id** - Given to container label. Inner input will get (id)+"-input"
+* **className** - Given to container label, appended to "date-input-label-wrapper ". Inner input will get (className)+"-input"
 * **labelText** - Placed before the string output.
-
-#### Default classNames
-
-
-
-##### Input children classNames
-* **date(`<text>`)** - "date-input date"
-* **month(`<select>`)** - "date-input month"
-* **year(`<text>`)** - "date-input year"
 ---
 
+### Default classNames
+##### `<DateInput />`
+* **date-input-wrapper** - Main wrapper
+
+###### Input children classNames
+* **date-input date** - "date input `<input type="text">`"
+* **date-input month** - "month select list `<select>`"
+* **date-input year** - "year input `<input type="text">`"
+
+##### `<DateInputWithLabel>`
+* **date-input-label-wrapper** - Main label wrapper
+* **date-output-wrapper** - Wraps label text `<span>` and date output `<span>`
+* **date-label-text** - `<span>` Holding label text
+* **date-value-output** - `<span>` With result of date input change
+---
 
 ##### *"What's with the 'ez'?"*
-Simply put react-date-input was taken. No snark intended.
+react-date-input was taken, that's it. No snark intended.
