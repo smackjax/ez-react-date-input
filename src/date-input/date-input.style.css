@@ -1,0 +1,31 @@
+.date-input-wrapper{
+    display: flex; 
+    flex-direction: row;
+    max-width: 230px;
+    width: 100%;
+}
+.date-input{
+    padding: 4px 5px;
+    border: 0px solid #aaa;
+    width: 30%;
+    font-size: 16px;
+}
+.date-input.year{
+    border-radius: 0 2px 2px 0;
+    padding-left: 15px; 
+    border-width: 1px;
+    border-left-width: 0px;
+    width: 33%;
+}
+.date-input.month{
+    width: 37%;
+    border-radius: 2px 0 0 2px ;
+    border-width: 1px;
+    border-right-width: 0px;
+}
+.date-input.date{
+    padding-left: 15px; 
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+
+}
