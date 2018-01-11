@@ -1,6 +1,6 @@
 {
   "name": "ez-react-date-input",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A ReactJS date input that is NOT a date-picker",
   "main": "dist/index.js",
   "scripts": {
@@ -54,5 +54,9 @@
     "transform": {
       ".*": "<rootDir>/node_modules/jest-css-modules"
     }
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/smackjax/ez-react-date-input/issues"
+  },
+  "homepage": "https://github.com/smackjax/ez-react-date-input#readme"
 }
